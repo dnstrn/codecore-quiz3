@@ -1,0 +1,10 @@
+<h1>Ideas Index</h1>
+<hr>
+<% @ideas.each do |idea| %>
+  <div>
+    <h3><%= link_to idea.title, idea_path(idea) %></h3>
+    <p><%= idea.body %></p>
+    <p>By <%= idea.user.full_name.titleize %></p>
+  </div>
+  <hr>
+<% end %>

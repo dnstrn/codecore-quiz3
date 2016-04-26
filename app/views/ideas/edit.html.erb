@@ -1,0 +1,21 @@
+<h1>Edit Idea</h1>
+
+<% if @idea.errors.any? %>
+  <ul>
+    <% @idea.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @idea do |i| %>
+<div>
+  <%= i.label :title %>
+  <%= i.text_field :title %>
+</div>
+<div>
+  <%= i.label :body %>
+  <%= i.text_area :body %>
+</div>
+<%= i.submit %>
+<% end %>
